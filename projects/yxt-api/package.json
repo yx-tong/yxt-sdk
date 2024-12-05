@@ -1,0 +1,26 @@
+{
+    "name": "@linktop/yxt-api",
+    "version": "0.0.4",
+    "description": "营销通开放 API",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "scripts": {
+        "build": "tsc",
+        "lint": "eslint 'src/**/*.{js,ts,tsx}'",
+        "prepublishOnly": "npm run build"
+    },
+    "dependencies": {
+        "bcryptjs": "^2.4.3"
+    },
+    "devDependencies": {
+        "@types/bcryptjs": "^2.4.6"
+    }
+}
