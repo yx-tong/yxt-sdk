@@ -1,11 +1,9 @@
-// 查询发布需求
-
-
 import {ApiContext} from "./apiContext";
 import {BusinessItem, BusinessQuery} from "./models";
 
 const ctx = ApiContext.getInstance()
 
+// 查询发布需求
 export async function listBusiness(data: BusinessQuery) {
     return await ctx.apiRequest<BusinessItem[]>('POST', 'business/query', data) || []
 }

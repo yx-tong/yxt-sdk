@@ -12,26 +12,31 @@
  */
 
 
-import { LoginUser } from './login-user';
 
 /**
  * 
  * @export
- * @interface LoginOutput
+ * @interface UserSessionTokens
  */
-export interface LoginOutput {
+export interface UserSessionTokens {
     /**
-     * 
-     * @type {LoginUser}
-     * @memberof LoginOutput
+     * Semantic64<\"user\">，The 64-bit hexadecimal string identifier
+     * @type {string}
+     * @memberof UserSessionTokens
      */
-    user: LoginUser;
+    user_id: string;
     /**
      * 
      * @type {string}
-     * @memberof LoginOutput
+     * @memberof UserSessionTokens
      */
-    token: string;
+    access_token: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserSessionTokens
+     */
+    refresh_token: string;
 }
 
 
