@@ -1,6 +1,6 @@
 {
     "name": "@linktop/yxt-api",
-    "version": "0.0.4",
+    "version": "0.0.7",
     "description": "营销通开放 API",
     "license": "MIT",
     "main": "dist/index.js",
@@ -18,9 +18,11 @@
         "prepublishOnly": "npm run build"
     },
     "dependencies": {
+        "axios": "^1.7.9",
         "bcryptjs": "^2.4.3"
     },
     "devDependencies": {
-        "@types/bcryptjs": "^2.4.6"
+        "@types/bcryptjs": "^2.4.6",
+        "@types/uni-app": "^1.4.8"
     }
 }

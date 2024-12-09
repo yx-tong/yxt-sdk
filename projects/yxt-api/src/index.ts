@@ -1,1 +1,2 @@
-export const host = "http://localhost"
+export * from './apiAuth'
+export * from './apiAttachments'
