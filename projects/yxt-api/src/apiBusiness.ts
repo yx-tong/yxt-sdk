@@ -1,5 +1,5 @@
 import {ApiContext} from "./apiContext";
-import {BusinessItem, BusinessQuery} from "./models";
+import {BusinessItem, BusinessQuery, BusinessSetter} from "./models";
 
 const ctx = ApiContext.getInstance()
 
@@ -24,7 +24,7 @@ export async function getBusinessDetail(id: any) {
 }
 
 // 修改发布需求
-export async function editBusiness(data: any) {
+export async function editBusiness(data: BusinessSetter) {
     return await ctx.apiRequest<number>('POST', 'business/edit', data) || 0
 }
 
