@@ -12,6 +12,8 @@
  */
 
 
+import { BusinessStatus } from './business-status';
+import { BusinessType } from './business-type';
 
 /**
  * 
@@ -25,6 +27,24 @@ export interface BusinessSetter {
      * @memberof BusinessSetter
      */
     business?: Array<string>;
+    /**
+     * 
+     * @type {BusinessType}
+     * @memberof BusinessSetter
+     */
+    business_type?: BusinessType;
+    /**
+     * 
+     * @type {BusinessStatus}
+     * @memberof BusinessSetter
+     */
+    verify_status?: BusinessStatus;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof BusinessSetter
+     */
+    is_hot?: boolean;
 }
 
 

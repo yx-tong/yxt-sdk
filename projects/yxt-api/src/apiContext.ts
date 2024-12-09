@@ -9,10 +9,10 @@ export class ApiContext {
 
     private constructor() {
         this.apiRequest = async (method: Method, endpoint: string, data: any) => {
-            throw new Error('`apiRequest` not implemented!');
+            return null
         }
-        this.tokenRefresh = async () => {
-            throw new Error('`refreshRequest` not implemented!');
+        this.apiRefresh = async () => {
+
         }
         this.getAccessToken = async () => {
             return null
@@ -43,7 +43,7 @@ export class ApiContext {
     /** 发送请求 */
     public apiRequest: <T>(method: Method, endpoint: string, data: any) => Promise<T | null>;
     /** 刷新 JwtTokens */
-    public tokenRefresh: () => Promise<void>;
+    public apiRefresh: () => Promise<void>;
 
     async makeAccessHeaders() {
         const headers: any = {

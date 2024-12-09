@@ -18,55 +18,55 @@ import { UserType } from './user-type';
 /**
  * YxUser
  * @export
- * @interface UserDto
+ * @interface UserItem
  */
-export interface UserDto {
+export interface UserItem {
     /**
      * Semantic64<\"user\">，The 64-bit hexadecimal string identifier
      * @type {string}
-     * @memberof UserDto
+     * @memberof UserItem
      */
     user_id: string;
     /**
      * 
      * @type {UserType}
-     * @memberof UserDto
+     * @memberof UserItem
      */
     user_type: UserType;
     /**
      * 用户昵称
      * @type {string}
-     * @memberof UserDto
+     * @memberof UserItem
      */
     nick_name: string;
     /**
      * 真实姓名
      * @type {string}
-     * @memberof UserDto
+     * @memberof UserItem
      */
     real_name: string;
     /**
      * 
      * @type {string}
-     * @memberof UserDto
+     * @memberof UserItem
      */
     company: string;
     /**
      * 
      * @type {string}
-     * @memberof UserDto
+     * @memberof UserItem
      */
     create_time: string;
     /**
      * 
      * @type {BusinessType}
-     * @memberof UserDto
+     * @memberof UserItem
      */
     business_type: BusinessType;
     /**
      * 
      * @type {number}
-     * @memberof UserDto
+     * @memberof UserItem
      */
     verify_status: number;
 }

@@ -12,37 +12,33 @@
  */
 
 
+import { BusinessStatus } from './business-status';
+import { BusinessType } from './business-type';
 
 /**
  * 
  * @export
- * @interface ServiceSetter
+ * @interface BusinessItem
  */
-export interface ServiceSetter {
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof ServiceSetter
-     */
-    id_list: Array<string>;
+export interface BusinessItem {
     /**
      * 
      * @type {number}
-     * @memberof ServiceSetter
+     * @memberof BusinessItem
      */
-    service_type?: number;
+    business_id: number;
     /**
      * 
-     * @type {number}
-     * @memberof ServiceSetter
+     * @type {BusinessType}
+     * @memberof BusinessItem
      */
-    verify_status?: number;
+    business_type: BusinessType;
     /**
      * 
-     * @type {boolean}
-     * @memberof ServiceSetter
+     * @type {BusinessStatus}
+     * @memberof BusinessItem
      */
-    is_hot?: boolean;
+    business_status: BusinessStatus;
 }
 
 

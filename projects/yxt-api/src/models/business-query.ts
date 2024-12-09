@@ -12,41 +12,43 @@
  */
 
 
+import { BusinessStatus } from './business-status';
+import { BusinessType } from './business-type';
 
 /**
  * 
  * @export
- * @interface BusinessGetter
+ * @interface BusinessQuery
  */
-export interface BusinessGetter {
+export interface BusinessQuery {
     /**
      * The current page number
      * @type {number}
-     * @memberof BusinessGetter
+     * @memberof BusinessQuery
      */
     page: number;
     /**
      * The number of items per page
      * @type {number}
-     * @memberof BusinessGetter
+     * @memberof BusinessQuery
      */
     size: number;
     /**
      * 
-     * @type {number}
-     * @memberof BusinessGetter
+     * @type {BusinessType}
+     * @memberof BusinessQuery
      */
-    service_type?: number;
+    business_type?: BusinessType;
     /**
      * 
-     * @type {number}
-     * @memberof BusinessGetter
+     * @type {BusinessStatus}
+     * @memberof BusinessQuery
      */
-    review_status?: number;
+    business_status?: BusinessStatus;
     /**
      * 
      * @type {boolean}
-     * @memberof BusinessGetter
+     * @memberof BusinessQuery
      */
     is_hot?: boolean;
 }

@@ -14,17 +14,17 @@
 
 
 /**
- * 
+ * LoginParam
  * @export
- * @interface BusinessDto
+ * @interface WxMiniLogin
  */
-export interface BusinessDto {
+export interface WxMiniLogin {
     /**
-     * 
-     * @type {number}
-     * @memberof BusinessDto
+     * 小程序登陆code
+     * @type {string}
+     * @memberof WxMiniLogin
      */
-    business_id: number;
+    code: string;
 }
 
 

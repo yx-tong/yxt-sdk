@@ -17,55 +17,55 @@ import { TagType } from './tag-type';
 /**
  * 
  * @export
- * @interface TagDto
+ * @interface TagItem
  */
-export interface TagDto {
+export interface TagItem {
     /**
      * Semantic64<\"tag\">，The 64-bit hexadecimal string identifier
      * @type {string}
-     * @memberof TagDto
+     * @memberof TagItem
      */
     tag_id: string;
     /**
      * 
      * @type {string}
-     * @memberof TagDto
+     * @memberof TagItem
      */
     tag_name: string;
     /**
      * 
      * @type {TagType}
-     * @memberof TagDto
+     * @memberof TagItem
      */
     tag_type: TagType;
     /**
      * Semantic64<\"tag\">，The 64-bit hexadecimal string identifier
      * @type {string}
-     * @memberof TagDto
+     * @memberof TagItem
      */
     parent_id?: string;
     /**
      * 该字段总是空的!
-     * @type {Array<TagDto>}
-     * @memberof TagDto
+     * @type {Array<TagItem>}
+     * @memberof TagItem
      */
-    children: Array<TagDto>;
+    children: Array<TagItem>;
     /**
      * Semantic64<\"user\">，The 64-bit hexadecimal string identifier
      * @type {string}
-     * @memberof TagDto
+     * @memberof TagItem
      */
     created_user?: string;
     /**
      * Semantic64<\"user\">，The 64-bit hexadecimal string identifier
      * @type {string}
-     * @memberof TagDto
+     * @memberof TagItem
      */
     updated_user?: string;
     /**
      * 
      * @type {boolean}
-     * @memberof TagDto
+     * @memberof TagItem
      */
     is_deleted: boolean;
 }
