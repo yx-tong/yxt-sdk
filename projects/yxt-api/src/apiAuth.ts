@@ -1,10 +1,10 @@
 import bcrypt from 'bcryptjs'
 import {ApiContext} from "./apiContext";
-import {AttachmentQuery, CaptchaCode, PasswordLogin, UserSessionTokens, WechatLogin} from "./models";
+import {AttachmentQuery, CaptchaCode, PasswordLogin, PasswordReset, UserSessionTokens, WechatLogin} from "./models";
 
 const ctx = ApiContext.getInstance();
 
-function garble(text: string): Promise<string> {
+export function garble(text: string): Promise<string> {
     const salt = '$2y$10$YXT_COPYRIGHT20240101.'
     return new Promise((resolve, reject) => {
         bcrypt.hash(text, salt, (err, hash) => {
@@ -38,6 +38,28 @@ export async function passwordLogin(data: PasswordLogin) {
         password: await encrypt(data.password)
     }
     return ctx.apiRequest<UserSessionTokens>('POST', 'auth/password/login', safe)
+}
+
+export async function passwordReset(data: PasswordReset) {
+    return await ctx.apiRequest<boolean>('POST', 'auth/password/reset', data) || false
+}
+
+/** 发送邮箱验证码 */
+export async function emailSend(data: any) {
+    return await ctx.apiRequest<boolean>('POST', 'auth/email/reset', data) || false
+}
+
+/** 使用邮箱验证码登录 */
+export async function emailLogin(data: any) {
+    return await ctx.apiRequest<boolean>('POST', 'auth/email/reset', data) || false
+}
+
+export async function emailReset(data: any) {
+    return await ctx.apiRequest<boolean>('POST', 'auth/email/reset', data) || false
+}
+
+export async function wechatExists(data: WechatLogin) {
+    return ctx.apiRequest<string>('POST', 'auth/wechat/is_registered', data)
 }
 
 export async function wechatRegister(data: WechatLogin) {

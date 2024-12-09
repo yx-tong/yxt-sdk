@@ -9,17 +9,6 @@ export async function listBusiness(data: BusinessQuery) {
 }
 
 export async function getBusinessDetail(id: any) {
-    // let userId = '';
-    // if (getdtype() == 'employer') {
-    //     userId = uni.getStorageSync('uidemployer') || '';
-    // } else {
-    //     userId = uni.getStorageSync('uidemployee') || '';
-    // }
-    // const uid = userId || -1;
-    // const res = await request({
-    //     url: `${baseUrl}/business/detail/${id}/${uid}`,
-    // });
-    // return res;
     return ctx.apiRequest('POST', 'business/detail', id);
 }
 
@@ -31,6 +20,39 @@ export async function editBusiness(data: BusinessSetter) {
 
 // 删除发布需求
 export async function deleteBusiness(data: any) {
-    return await ctx.apiRequest('DELETE', 'business/delete', data) || 0
+    return await ctx.apiRequest<number>('DELETE', 'business/delete', data) || 0
 }
 
+
+/** 收藏或取消收藏 */
+export async function markBusinessCollected(data: any) {
+    return await ctx.apiRequest<number>('DELETE', 'business/collect/remark', data) || 0
+}
+
+
+/** 查询用户收藏 */
+export async function listBusinessCollected(data: any) {
+    return await ctx.apiRequest<number>('DELETE', 'business/collect/query', data) || []
+}
+
+
+/** 评论某个项目 */
+export async function addBusinessComment(data: any) {
+    return await ctx.apiRequest<number>('DELETE', 'business/comment/add', data) || 0
+}
+
+/** 列出所有评论 */
+export async function listBusinessComment(business: string) {
+    const data = {
+        business_id: business
+    }
+    return await ctx.apiRequest<any[]>('GET', 'business/comment/query', data) || []
+}
+
+/** 列出所有评论 */
+export async function listUserComment(user: string) {
+    const data = {
+        user_id: user
+    }
+    return await ctx.apiRequest<any[]>('GET', 'business/comment/query', data) || []
+}
